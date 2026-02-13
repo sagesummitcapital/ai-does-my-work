@@ -5,6 +5,7 @@ import { useEffect, useId, useState } from 'react'
 interface HubSpotFormProps {
   portalId: string
   formId: string
+  region?: string
 }
 
 declare global {
@@ -14,37 +15,34 @@ declare global {
   }
 }
 
-export function HubSpotForm({ portalId, formId }: HubSpotFormProps) {
+export function HubSpotForm({ portalId, formId, region = 'na2' }: HubSpotFormProps) {
   const reactId = useId()
   const targetId = `hubspot-form-${reactId.replace(/:/g, '')}`
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const SCRIPT_ID = 'hubspot-forms-v2'
-    const key = `${portalId}:${formId}`
+    const key = `${portalId}:${formId}:${targetId}`
 
-    // Global registry (prevents duplicate creates in Strict Mode / re-mounts)
-    window.__hsFormMounted = window.__hsFormMounted || {}
+    // Create a local, definitely-defined reference (fixes TS)
+    const mountedMap = (window.__hsFormMounted ??= {})
 
     const createForm = () => {
-      if (!window.hbspt) return
+      if (!window.hbspt?.forms?.create) return
       const target = document.getElementById(targetId)
       if (!target) return
 
-      // If this form has already been created on this page load, stop.
-      if (window.__hsFormMounted?.[key]) {
+      // Prevent duplicate renders (StrictMode + route transitions)
+      if (mountedMap[key]) {
         setLoaded(true)
         return
       }
 
-      // Mark BEFORE creating to prevent race conditions
-      window.__hsFormMounted[key] = true
-
-      // Clear target and render
+      mountedMap[key] = true
       target.innerHTML = ''
 
       window.hbspt.forms.create({
-        region: 'na2',
+        region,
         portalId,
         formId,
         target: `#${targetId}`,
@@ -55,6 +53,7 @@ export function HubSpotForm({ portalId, formId }: HubSpotFormProps) {
     }
 
     const existing = document.getElementById(SCRIPT_ID) as HTMLScriptElement | null
+
     if (!existing) {
       const script = document.createElement('script')
       script.id = SCRIPT_ID
@@ -67,16 +66,16 @@ export function HubSpotForm({ portalId, formId }: HubSpotFormProps) {
       else existing.addEventListener('load', createForm, { once: true })
     }
 
-    // IMPORTANT: do NOT unset the registry on cleanup.
-    // In dev Strict Mode, cleanup runs immediately, which would re-allow duplicates.
-  }, [portalId, formId, targetId])
+    return () => {
+      // allow re-mount if you navigate away and back
+      delete mountedMap[key]
+    }
+  }, [portalId, formId, region, targetId])
 
   return (
     <div className="hubspot-form-wrapper">
       <div id={targetId} />
-      {!loaded && (
-        <div className="text-center py-8 text-content-500">Loading form...</div>
-      )}
+      {!loaded && <div className="text-center py-8 text-content-500">Loading form...</div>}
 
       <style jsx global>{`
         .hubspot-form-wrapper .hs-form-field { margin-bottom: 1.5rem; }
