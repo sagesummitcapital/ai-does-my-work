@@ -72,7 +72,7 @@ export default function Home() {
             </div>
 
             <p className="mt-8 text-sm text-content-500 animate-initial animate-fade-up animate-delay-400">
-              Built for operators by operators.
+              Built by operators for operators.
 
 
             </p>
