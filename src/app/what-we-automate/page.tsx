@@ -5,71 +5,70 @@ import { BeforeAfterCard, CTASection } from '@/components'
 
 const categories = [
   {
-    title: 'Sales & Revenue Ops',
-    description: 'Stop revenue leakage caused by slow follow-up, messy CRM data, and manual handoffs.',
+    title: 'Sales & Revenue Operations',
+    description: 'Reduce revenue leakage by automating lead handling, follow-up, CRM updates, and pipeline visibility.',
     examples: [
       {
         title: 'Lead Intake → Routing → Follow-Up',
-        before: 'Leads land in inboxes, get routed inconsistently, and follow-up is uneven',
-        after: 'Every lead is enriched, routed by rules, logged to CRM, and followed up automatically'
+        before: 'Leads land in inboxes, get routed inconsistently, and follow-up happens late or not at all',
+        after: 'Every lead is enriched, routed by rules, logged to the CRM, and followed up automatically'
       },
       {
-        title: 'Pipeline Updates + Weekly Exec Summary',
-        before: 'Sales updates assembled manually from CRM notes and spreadsheets',
-        after: 'Auto-generated pipeline summary delivered weekly with risks and next actions'
+        title: 'Pipeline Updates + Weekly Summary',
+        before: 'Sales updates are pieced together manually from CRM notes, inboxes, and spreadsheets',
+        after: 'A clear pipeline summary is generated automatically with risks, next actions, and visibility for leadership'
       }
     ]
   },
   {
-    title: 'Marketing Operations',
-    description: 'Turn scattered campaign work into repeatable systems with tracking, attribution, and reuse.',
+    title: 'Back Office Operations',
+    description: 'Replace repetitive internal admin work with structured workflows that improve speed, visibility, and consistency.',
     examples: [
       {
-        title: 'Content + Campaign Production',
-        before: 'Ad hoc drafting, approvals, and posting across tools with no visibility',
-        after: 'Structured workflow: brief → draft → review → publish → performance recap'
+        title: 'Inbox Triage + Internal Routing',
+        before: 'Requests come in through shared inboxes and get manually sorted, forwarded, and tracked',
+        after: 'Messages are categorized, summarized, routed automatically, and tracked through completion'
       },
       {
-        title: 'Inbound Funnel Triage',
-        before: 'Form fills and inquiries manually reviewed and responded to (often late)',
-        after: 'AI triage + templated responses + routing to the right owner with SLA tracking'
+        title: 'Meeting Notes → Tasks → Follow-Through',
+        before: 'Action items are buried in notes, Slack messages, and follow-up emails',
+        after: 'Meeting notes are turned into structured tasks, assigned automatically, and tracked to completion'
       }
     ]
   },
   {
     title: 'Finance & Reporting',
-    description: 'Reduce close time, eliminate spreadsheet drag, and keep an audit trail for every step.',
+    description: 'Reduce close time, remove spreadsheet drag, and improve reporting consistency with clear review controls.',
     examples: [
       {
         title: 'Month-End Close + Reporting Pack',
-        before: 'Exports, reconciliation, and formatting done manually each month',
-        after: 'Automated pulls + validation checks + exception queue + consistent reporting pack'
+        before: 'Exports, reconciliation, and formatting are done manually every month',
+        after: 'Source data is pulled automatically, validated, and turned into a consistent reporting pack'
       },
       {
         title: 'Expense Categorization + Review Queue',
-        before: 'Manual coding of transactions and inconsistent category rules',
-        after: 'AI categorization with confidence scoring and a clean review/approval queue'
+        before: 'Transactions are coded manually with inconsistent rules and slow review cycles',
+        after: 'Expenses are categorized automatically with confidence scoring and a clean review queue for approval'
       }
     ]
   },
   {
-    title: 'Client Support & Operations',
-    description: 'Improve response time and consistency by routing issues correctly the first time.',
+    title: 'Client Support & Onboarding',
+    description: 'Improve client experience and reduce internal coordination by automating intake, routing, and status tracking.',
     examples: [
       {
         title: 'Support Triage + Routing',
-        before: 'Requests pile up across email and chat with inconsistent prioritization',
-        after: 'Categorized, summarized, prioritized tickets routed automatically with escalation rules'
+        before: 'Requests pile up across email and chat with inconsistent prioritization and handoffs',
+        after: 'Requests are categorized, prioritized, summarized, and routed automatically with escalation rules'
       },
       {
         title: 'Client Onboarding Pipeline',
-        before: 'Manual emails, document chasing, and unclear internal status',
-        after: 'Automated onboarding: intake → document collection → provisioning → status tracking'
+        before: 'Onboarding depends on manual emails, document chasing, and unclear internal ownership',
+        after: 'A structured onboarding workflow handles intake, document collection, provisioning, and status tracking'
       }
     ]
   }
 ]
-
 
 export default function WhatWeAutomate() {
   useEffect(() => {
@@ -94,10 +93,10 @@ export default function WhatWeAutomate() {
           <div className="max-w-2xl">
             <span className="label">What We Automate</span>
             <h1 className="mt-4 text-3xl md:text-4xl">
-              Practical Automation for <span className="gradient-text">Real Operations</span>
+              The Manual Work <span className="gradient-text">Slowing Your Business Down</span>
             </h1>
             <p className="mt-6 text-lg text-content-400">
-              We automate workflows that are high-volume, rules-based, and measurable — so you get time back, reduce errors, and tighten cycle times without losing control.
+              We automate high-friction workflows across sales, operations, finance, support, and internal coordination — especially the repetitive admin work that eats up time, slows execution, and creates avoidable errors.
             </p>
           </div>
         </div>
@@ -105,13 +104,13 @@ export default function WhatWeAutomate() {
 
       {/* Categories */}
       {categories.map((category, categoryIndex) => (
-        <section 
-          key={category.title} 
+        <section
+          key={category.title}
           className={`section relative ${categoryIndex % 2 === 1 ? 'bg-surface-900/50' : ''}`}
         >
           {categoryIndex % 2 === 0 && <div className="absolute inset-0 bg-glow-teal opacity-10" />}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-surface-700 to-transparent" />
-          
+
           <div className="container-wide relative">
             <div className="mb-12 scroll-fade">
               <span className="label">{String(categoryIndex + 1).padStart(2, '0')}</span>
@@ -130,8 +129,10 @@ export default function WhatWeAutomate() {
         </section>
       ))}
 
-      <CTASection headline="Have a workflow in mind?" description="Tell us what’s manual today. We’ll map the workflow, identify what can be automated, and estimate ROI before any build work.
-" />
+      <CTASection
+        headline="Have a workflow you want to automate?"
+        description="Tell us what is manual today. We’ll map the workflow, identify the best automation opportunity, and estimate the operational ROI before any build work begins."
+      />
     </>
   )
 }

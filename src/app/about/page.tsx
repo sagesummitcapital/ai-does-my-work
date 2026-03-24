@@ -26,13 +26,12 @@ export default function About() {
           <div className="max-w-2xl">
             <span className="label">About</span>
             <h1 className="mt-4 text-3xl md:text-4xl">
-              Built by <span className="gradient-text">Operators.</span>
+              Built by <span className="gradient-text">Operators Who Fix Operations.</span>
             </h1>
           </div>
         </div>
       </section>
-
-      {/* Content */}
+{/* Content */}
       <section className="section relative">
         <div className="absolute inset-0 bg-glow-teal opacity-10" />
         <div className="container-wide relative">
@@ -40,33 +39,37 @@ export default function About() {
             <div className="lg:col-span-7">
               <div className="space-y-6 scroll-fade">
                 <p className="text-lg text-content-300">
-                  AI Does My Work was created by builders who deploy AI inside their own 
-                  portfolio companies. We focus on replacing manual workflows — not 
-                  experimenting with your core operations.
+                  AI Does My Work was built by operators working inside growing businesses with real operational pressure — not theorists, not consultants, and not tool builders.
                 </p>
+
                 <p className="text-content-400">
-                  Every implementation we recommend is one we would deploy in our own 
-                  businesses. We've seen what works, what fails, and what creates 
-                  unnecessary complexity. That experience shapes how we approach each engagement.
+                  We’ve seen what happens as companies scale: inboxes become task managers, reporting lives in spreadsheets, follow-up becomes inconsistent, and internal coordination slows everything down.
                 </p>
+
                 <p className="text-content-400">
-                  We're part of the <span className="text-accent-400">Sage Summit Capital</span> portfolio — a holding company focused on 
-                  building AI-native businesses with discipline and long-term intent. This means 
-                  we understand the operator's perspective because we are operators.
+                  Most businesses don’t have a strategy problem. They have an execution problem driven by too many manual workflows.
+                </p>
+
+                <p className="text-content-400">
+                  We focus on identifying those workflows and replacing them with simple, structured automation systems that reduce admin load, improve execution, and increase margin.
+                </p>
+
+                <p className="text-content-400">
+                  We are part of the <span className="text-accent-400">Sage Summit Capital</span> ecosystem, where we actively implement these systems inside our own portfolio companies. Every recommendation we make is based on what we’ve tested in real operating environments.
                 </p>
               </div>
             </div>
 
             <div className="lg:col-span-4 lg:col-start-9">
               <div className="card scroll-fade">
-                <span className="label">Our Focus</span>
+                <span className="label">How We Operate</span>
                 <ul className="mt-4 space-y-3">
                   {[
-  'Workflow replacement, not AI add-ons',
-  'ROI quantified before deployment',
-  'Governed automation with human oversight',
-  'Systems that compound over time'
-].map((item, index) => (
+                    'We focus on removing repetitive admin work first',
+                    'We prioritize workflows with clear ROI and time savings',
+                    'We build systems that fit your existing operations',
+                    'We implement with control, visibility, and accountability'
+                  ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 mt-2.5 rounded-full bg-accent-400 flex-shrink-0" />
                       <span className="text-sm text-content-400">{item}</span>
@@ -79,20 +82,30 @@ export default function About() {
         </div>
       </section>
 
-<section className="section-sm border-t border-surface-800">
-  <div className="container-wide">
-    <div className="max-w-2xl scroll-fade">
-      <span className="label">What We Are Not</span>
-      <p className="mt-4 text-content-400">
-        We are not an AI agency selling experiments. We are not building chatbots for the sake of it. 
-        And we do not deploy autonomous systems into critical workflows without oversight.
-      </p>
-      <p className="mt-4 text-content-400">
-        We replace specific manual processes with structured automation — then measure the result.
-      </p>
-    </div>
-  </div>
-</section>
+      {/* What We Are Not */}
+      <section className="section-sm border-t border-surface-800">
+        <div className="container-wide">
+          <div className="max-w-2xl scroll-fade">
+            <span className="label">What We Are Not</span>
+
+            <p className="mt-4 text-content-400">
+              We are not an AI agency selling experiments, demos, or one-off automations that never get used.
+            </p>
+
+            <p className="mt-4 text-content-400">
+              We are not building custom software projects that take months and require ongoing development just to function.
+            </p>
+
+            <p className="mt-4 text-content-400">
+              And we do not introduce complexity into already messy operations.
+            </p>
+
+            <p className="mt-4 text-content-400">
+              We focus on replacing specific manual workflows with simple, reliable systems — then measuring the operational impact.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <CTASection />
     </>
