@@ -58,7 +58,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-content-400 max-w-2xl leading-relaxed animate-initial animate-fade-up animate-delay-200">
-              We help growing service businesses remove repetitive admin work across follow-up, reporting, inbox management, CRM updates, and internal coordination so they can scale without adding headcount.
+              We help growing businesses remove repetitive admin work across follow-up, reporting, inbox management, CRM updates, and internal coordination so they can scale without adding headcount.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 animate-initial animate-fade-up animate-delay-300">
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
 
             <p className="mt-8 text-sm text-content-500 animate-initial animate-fade-up animate-delay-400">
-              Built by operators for founder-led, operator-led, and growth-stage service businesses.
+              Built by AI-first operators for founder-led, operator-led, and growth-stage businesses.
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="lg:col-span-5 scroll-fade">
               <span className="label">The Problem</span>
               <h2 className="mt-4 text-content-100">
-                Manual Work Slows Growth <span className="gradient-text">And Cuts Into Margin.</span>
+                Manual Work Slows Growth <span className="gradient-text">And Kills Margin.</span>
               </h2>
             </div>
             <div className="lg:col-span-6 lg:col-start-7">
@@ -126,7 +126,7 @@ export default function Home() {
           <div className="text-center mb-16 scroll-fade">
             <span className="label">Our Approach</span>
             <h2 className="mt-4 text-content-100">
-              We Don’t Add AI to Busywork. <span className="gradient-text">We Remove the Busywork.</span>
+              We Don’t Add AI To Busywork. <span className="gradient-text">We Remove The Busywork.</span>
             </h2>
             <p className="mt-4 text-content-400 max-w-2xl mx-auto">
               We identify the workflows creating drag in your business, replace the manual layer with structured automation, and track the operational impact over time.
@@ -167,7 +167,7 @@ export default function Home() {
             <div className="lg:col-span-5 scroll-fade">
               <span className="label">Implementation</span>
               <h2 className="mt-4 text-content-100">
-                Built for Operators Who Need <br />
+                Built For Operators Who Need <br />
                 <span className="gradient-text">Real Outcomes.</span>
               </h2>
               <p className="mt-4 text-content-400">
