@@ -58,7 +58,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-content-400 max-w-2xl leading-relaxed animate-initial animate-fade-up animate-delay-200">
-              We help growing service businesses remove repetitive admin work across follow-up, reporting, inbox management, CRM updates, and internal coordination so they can scale without adding headcount.
+              We help growing businesses remove repetitive admin work across follow-up, reporting, inbox management, CRM updates, and internal coordination so they can scale without adding headcount.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 animate-initial animate-fade-up animate-delay-300">
